@@ -1,0 +1,50 @@
+@keyframes attention {
+  55% {
+    box-shadow: 0 0 0px var(--primary-color);
+  }
+  70% {
+    box-shadow: 0 0 9px var(--secondary-color);
+  }
+  85% {
+    box-shadow: 0 0 0px var(--primary-color);
+  }
+}
+
+.attention {
+  animation-name: attention;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
+.dropdown {
+  background: white;
+  color: #222;
+  border: 1px solid #e0e0e0;
+}
+
+:global(.dark-mode) .dropdown {
+  background: #23272e;
+  color: #e0e0e0;
+  border: 1px solid #333;
+}
+
+.dropdownButton {
+  background: transparent;
+  color: #222;
+  border: 1px solid #e0e0e0;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+:global(.dark-mode) .dropdownButton {
+  color: #e0e0e0;
+  border: 1px solid #333;
+}
+
+.dropdownButton:hover {
+  background: #f4f4f4;
+}
+
+:global(.dark-mode) .dropdownButton:hover {
+  background: #333;
+}

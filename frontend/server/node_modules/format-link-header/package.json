@@ -1,0 +1,58 @@
+{
+  "name": "format-link-header",
+  "version": "3.1.1",
+  "description": "Format a link header object, to the original RFC 5988",
+  "main": "src/index.js",
+  "support": true,
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "pretest": "npm run lint",
+    "test": "nyc ava",
+    "test:watch": "ava -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathansamines/format-link-header.git"
+  },
+  "keywords": [
+    "format-link-header",
+    "web",
+    "links",
+    "header",
+    "links"
+  ],
+  "author": "Jonathan Samines <jn.samines@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "bugs": {
+    "url": "https://github.com/jonathansamines/format-link-header/issues"
+  },
+  "homepage": "https://github.com/jonathansamines/format-link-header#readme",
+  "devDependencies": {
+    "ava": "^3.14.0",
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "nyc": "^15.1.0"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100,
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ]
+  },
+  "volta": {
+    "node": "14.15.1"
+  }
+}

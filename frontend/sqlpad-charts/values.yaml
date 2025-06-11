@@ -1,0 +1,43 @@
+replicaCount: 1
+
+image:
+  repository: selekt/selekt
+  pullPolicy: IfNotPresent
+  tag: '5'
+
+resources:
+  limits:
+    memory: 512Mi
+    cpu: 1
+  requests:
+    memory: 256Mi
+    cpu: '0.5'
+
+ports:
+  containerPort: 3000
+
+configmap:
+  name: 'selekt-cm'
+
+env:
+  selekt:
+    SELEKT_ADMIN: 'admin@selekt.com'
+    SELEKT_ADMIN_PASSWORD: 'admin'
+    SELEKT_APP_LOG_LEVEL: 'info'
+    SELEKT_WEB_LOG_LEVEL: 'info'
+    SELEKT_CONNECTIONS__pgdemo__name: 'Postgres demo'
+    SELEKT_CONNECTIONS__pgdemo__driver: 'postgres'
+    SELEKT_CONNECTIONS__pgdemo__host: 'selekt-postgresql'
+    SELEKT_CONNECTIONS__pgdemo__database: 'postgres'
+    SELEKT_CONNECTIONS__pgdemo__username: 'selekt'
+    SELEKT_CONNECTIONS__pgdemo__password: 'selekt'
+    SELEKT_CONNECTIONS__pgdemo__multiStatementTransactionEnabled: true
+    SELEKT_CONNECTIONS__pgdemo__idleTimeoutSeconds: '86400'
+
+postgresql:
+  enabled: true
+  postgresUser: selekt
+  postgresPassword: selekt
+  postgresDatabase: postgres
+  PGPASSWORD: selekt
+  initdbScriptsConfigMap: 'selekt-cm'

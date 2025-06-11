@@ -1,0 +1,89 @@
+.table {
+  /* 
+    This is needed to make text truncation to work
+    Otherwise cell will grow to however large it things to show large queries
+  */
+  table-layout: fixed;
+  width: 100%;
+  max-height: 100%;
+  overflow-x: auto;
+  /* allows for header border to show correctly */
+  border-collapse: separate;
+  border-spacing: 0;
+  background: white;
+  color: #222;
+}
+
+:global(.dark-mode) .table {
+  background: #23272e;
+  color: #e0e0e0;
+}
+
+.table tr {
+  height: 30px;
+}
+
+.table tr:nth-child(odd) {
+  background-color: var(--table-alt-row-bg-color);
+}
+
+.table th,
+.table td {
+  border: 1px solid #e0e0e0;
+  padding: 8px;
+  text-align: left;
+}
+
+:global(.dark-mode) .table th,
+:global(.dark-mode) .table td {
+  border: 1px solid #333;
+}
+
+.table th {
+  background: #f5f5f5;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 100px;
+}
+
+:global(.dark-mode) .table th {
+  background: #2a2a2a;
+}
+
+.statementTextColHeader {
+  padding-left: 8px;
+  width: 60%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.statementTextCol {
+  width: 60%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* specificity in .table td overrides this. Unsure if I want to go all css-module or css on this, so for now !important */
+  padding: 0px !important;
+}
+
+/* Overrides to make the ghost button look right */
+.statementButton {
+  font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+  white-space: nowrap;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
+  text-align: left;
+}
+
+.table tr:hover {
+  background: #f4f4f4;
+}
+
+:global(.dark-mode) .table tr:hover {
+  background: #333;
+}

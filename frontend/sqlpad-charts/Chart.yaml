@@ -1,0 +1,22 @@
+apiVersion: v2
+name: selekt
+description: selekt helm charts
+
+type: application
+
+version: 0.1.0
+
+keywords:
+  - selekt
+  - sql
+  - mysql
+  - postgresql
+
+home: https://github.com/selekt/selekt
+
+maintainers:
+  - name: linjinbao666
+    email: linjinbao666@gmail.com
+    url: https://blog.amrom.tk
+
+appVersion: '1.16.0'

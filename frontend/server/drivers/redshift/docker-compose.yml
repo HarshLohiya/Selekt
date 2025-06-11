@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: postgres:9.6-alpine
+    environment:
+      POSTGRES_USER: selekt
+      POSTGRES_PASSWORD: selekt
+      POSTGRES_DB: selekt
+    ports:
+      - '5432:5432'
